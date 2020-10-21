@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 // create the connection to database
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'user',
+  user: 'root',
   password: 'password',
   port: 8001,
   database: 'db'
@@ -13,10 +13,6 @@ const connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    connection.query("CREATE DATABASE mydb", function (err, result) {
-        if (err) throw err;
-        console.log("Database created");
-    });
 });
 
 // // simple query
