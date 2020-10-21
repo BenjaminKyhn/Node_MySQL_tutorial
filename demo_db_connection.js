@@ -9,11 +9,15 @@ const connection = mysql.createConnection({
   port: 8001,
   database: 'db'
 });
- 
+
 connection.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-  });
+    connection.query("CREATE DATABASE mydb", function (err, result) {
+        if (err) throw err;
+        console.log("Database created");
+    });
+});
 
 // // simple query
 // connection.query(
@@ -23,7 +27,7 @@ connection.connect(function(err) {
 //    console.log(fields); // fields contains extra meta data about results, if available
 //  }
 // );
-
+//
 // // simple query
 // connection.query(
 //    'INSERT INTO Memes (id, name, description) VALUES ("1", "reee", "aggitated person outburst");',
@@ -32,12 +36,12 @@ connection.connect(function(err) {
 //      console.log(fields); // fields contains extra meta data about results, if available
 //    }
 //  );
-
-// // simple query
-connection.query(
-    'SELECT * FROM `Memes`',
-    function(err, results, fields) {
-      console.log(results); // results contains rows returned by server
-      console.log(fields); // fields contains extra meta data about results, if available
-    }
-  );
+//
+// // // simple query
+// connection.query(
+//     'SELECT * FROM `Memes`',
+//     function(err, results, fields) {
+//       console.log(results); // results contains rows returned by server
+//       console.log(fields); // fields contains extra meta data about results, if available
+//     }
+//   );
