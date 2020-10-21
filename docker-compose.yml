@@ -6,7 +6,8 @@ services:
     image: benny/node_mysql_app:latest
     ports:
         - "8080:8080"
-    
+    # networks:
+    #     - network
 
   db:
     image: mysql:5.7
@@ -21,13 +22,20 @@ services:
         MYSQL_ROOT_PASSWORD: 'password'
     ports:
         # <Port exposed> : < MySQL Port running inside container>
-        - '8001:27017'
+        - '8001:3306'
     expose:
         # Opens port 3306 on the container
         - '3306'
         # Where our data will be persisted
     volumes:
         - my-db:/var/lib/mysql
+    # networks:
+    #     - network
+
 # Names our volume
 volumes:
     my-db:
+
+# networks:
+#     network:
+#         driver: bridge
