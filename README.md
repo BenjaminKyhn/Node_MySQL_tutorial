@@ -8,5 +8,5 @@ Then install mysql2 with the following command:
 Use this command in the terminal to start all the docker containers:  
 `docker-compose up --build`
 
-Then run the DB Connection file in Node:  
+Then start running the demo files with Node for example:  
 `node demo_db_connection.js`
