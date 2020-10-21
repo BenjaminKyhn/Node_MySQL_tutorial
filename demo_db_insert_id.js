@@ -15,6 +15,6 @@ connection.connect(function(err) {
     let sql = "INSERT INTO customers (name, address) VALUES ('Michelle', 'Blue Village 1')";
     connection.query(sql, function (err, result) {
         if (err) throw err;
-        console.log("1 record inserted, ID: " + result.insertId);
+        console.log("1 record inserted, ID: " + result.insertId); // use the result object to print information about the query
     });
 });
