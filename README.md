@@ -10,3 +10,6 @@ Use this command in the terminal to start all the docker containers:
 
 Then start running the demo files with Node for example:  
 `node demo_db_connection.js`
+
+This project has Sequelize functionality. Run the Sequelize.js file to insert users into the User table of the database:  
+`node sequelize.js`
