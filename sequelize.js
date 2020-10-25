@@ -1,3 +1,5 @@
+// Read more about Sequelize at https://sequelize.org/master/
+
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
 // Create a Sequelize object with options
@@ -30,9 +32,9 @@ User.init({
 
 // Create a user and add it to the users table (inserted into database immediately)
 (async () => {
-    await sequelize.sync();
+    await sequelize.sync(); // Synchronizes all models with the database, and creates the Users table if it doesn't exist (User is automatically pluralized)
     const jane = await User.create({
-        username: 'johndoe',
+        username: 'johndoe', // Shorthand syntax for specifying a column
         birthday: new Date(1988, 6, 20)
     });
     console.log(jane.toJSON());
